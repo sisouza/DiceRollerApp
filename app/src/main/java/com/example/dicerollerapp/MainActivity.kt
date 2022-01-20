@@ -22,10 +22,18 @@ class MainActivity : AppCompatActivity() {
 
     private fun rollDice() {
         //create a new Dice instance
-        val dice = Dice(6)
-        val diceRoll = dice.roll()
+        val diceOne = Dice(6)
+        val diceTwo = Dice(8)
+
+        val diceOneRoll = diceOne.roll()
+        val diceTwoRoll = diceTwo.roll()
+
         val resultTextView: TextView = findViewById(R.id.tvText)
-        resultTextView.text = diceRoll.toString()
+        resultTextView.text = diceOneRoll.toString()
+
+        val resultDiceTwoTextView: TextView = findViewById(R.id.tvTextTwo)
+        resultDiceTwoTextView.text = diceTwoRoll.toString()
+
 
     }
 }
