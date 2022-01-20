@@ -15,9 +15,26 @@ class MainActivity : AppCompatActivity() {
         val rollButton: Button = findViewById(R.id.btnRoll)
         //function to show message
         rollButton.setOnClickListener {
-            val resultTextView: TextView = findViewById(R.id.tvText)
-            resultTextView.text = "6"
+            rollDice()
         }
 
     }
+
+    private fun rollDice() {
+        //create a new Dice instance
+        val dice = Dice(6)
+        val diceRoll = dice.roll()
+        val resultTextView: TextView = findViewById(R.id.tvText)
+        resultTextView.text = diceRoll.toString()
+
+    }
 }
+
+//set Dice Class
+class Dice(private val numSides: Int) {
+
+    fun roll(): Int {
+        return (1..numSides).random()
+    }
+}
+
