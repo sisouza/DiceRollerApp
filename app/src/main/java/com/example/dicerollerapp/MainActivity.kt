@@ -21,14 +21,21 @@ class MainActivity : AppCompatActivity() {
     private fun rollDice() {
         //create a new Dice instance
         val diceOne = Dice(6)
-        val diceTwo = Dice(8)
+        val diceTwo = Dice(6)
 
         val diceOneRoll = diceOne.roll()
         val diceTwoRoll = diceTwo.roll()
 
         val diceImage: ImageView = findViewById(R.id.ivDiceImage)
         //set new dice image in ImageView
-        diceImage.setImageResource(R.drawable.dice_2)
+        when(diceOneRoll) {
+            1 -> diceImage.setImageResource(R.drawable.dice_1)
+            2 -> diceImage.setImageResource(R.drawable.dice_2)
+            3 -> diceImage.setImageResource(R.drawable.dice_3)
+            4 -> diceImage.setImageResource(R.drawable.dice_4)
+            5 -> diceImage.setImageResource(R.drawable.dice_5)
+            6 -> diceImage.setImageResource(R.drawable.dice_6)
+        }
 
     }
 }
