@@ -29,11 +29,11 @@ class MainActivity : AppCompatActivity() {
         val diceImage: ImageView = findViewById(R.id.ivDiceImage)
         //set new dice image in ImageView
 
-       /* the when expression returns the correct resource ID,
-        which will be stored in the drawableResource variable*/
+        /* the when expression returns the correct resource ID,
+         which will be stored in the drawableResource variable*/
         val drawableResource = when (diceOneRoll) {
             1 -> R.drawable.dice_1
-            2 ->R.drawable.dice_2
+            2 -> R.drawable.dice_2
             3 -> R.drawable.dice_3
             4 -> R.drawable.dice_4
             5 -> R.drawable.dice_5
@@ -42,6 +42,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         diceImage.setImageResource(drawableResource)
+        diceImage.contentDescription = diceOneRoll.toString()
+
 
     }
 }

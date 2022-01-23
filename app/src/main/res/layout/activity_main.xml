@@ -8,6 +8,7 @@
 
     <ImageView
         android:id="@+id/ivDiceImage"
+        android:contentDescription="@string/dice_image"
         android:layout_width="160dp"
         android:layout_height="200dp"
         android:src="@drawable/dice_1"
