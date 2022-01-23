@@ -16,6 +16,9 @@ class MainActivity : AppCompatActivity() {
             rollDice()
         }
 
+        //roll dice when app starts
+        rollDice()
+
     }
 
     private fun rollDice() {
