@@ -1,11 +1,8 @@
 package com.example.dicerollerapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
-import android.widget.Toast.*
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,12 +24,6 @@ class MainActivity : AppCompatActivity() {
 
         val diceOneRoll = diceOne.roll()
         val diceTwoRoll = diceTwo.roll()
-
-        val resultTextView: TextView = findViewById(R.id.tvText)
-        resultTextView.text = diceOneRoll.toString()
-
-        val resultDiceTwoTextView: TextView = findViewById(R.id.tvTextTwo)
-        resultDiceTwoTextView.text = diceTwoRoll.toString()
 
 
     }
