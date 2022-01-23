@@ -2,6 +2,7 @@ package com.example.dicerollerapp
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -25,6 +26,9 @@ class MainActivity : AppCompatActivity() {
         val diceOneRoll = diceOne.roll()
         val diceTwoRoll = diceTwo.roll()
 
+        val diceImage: ImageView = findViewById(R.id.ivDiceImage)
+        //set new dice image in ImageView
+        diceImage.setImageResource(R.drawable.dice_2)
 
     }
 }
