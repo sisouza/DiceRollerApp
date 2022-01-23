@@ -1,11 +1,9 @@
 package com.example.dicerollerapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
-import android.widget.Toast.*
+import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,21 +16,36 @@ class MainActivity : AppCompatActivity() {
             rollDice()
         }
 
+        //roll dice when app starts
+        rollDice()
+
     }
 
     private fun rollDice() {
         //create a new Dice instance
         val diceOne = Dice(6)
-        val diceTwo = Dice(8)
+        val diceTwo = Dice(6)
 
         val diceOneRoll = diceOne.roll()
         val diceTwoRoll = diceTwo.roll()
 
-        val resultTextView: TextView = findViewById(R.id.tvText)
-        resultTextView.text = diceOneRoll.toString()
+        val diceImage: ImageView = findViewById(R.id.ivDiceImage)
+        //set new dice image in ImageView
 
-        val resultDiceTwoTextView: TextView = findViewById(R.id.tvTextTwo)
-        resultDiceTwoTextView.text = diceTwoRoll.toString()
+        /* the when expression returns the correct resource ID,
+         which will be stored in the drawableResource variable*/
+        val drawableResource = when (diceOneRoll) {
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            6 -> R.drawable.dice_6
+            else -> R.drawable.dice_6
+        }
+
+        diceImage.setImageResource(drawableResource)
+        diceImage.contentDescription = diceOneRoll.toString()
 
 
     }
